@@ -3,6 +3,7 @@ import {
     Flex,
     Text,
     Button,
+    Stack,
   } from "@chakra-ui/react";
   import React from "react";
   import { useEffect } from "react";
@@ -42,9 +43,21 @@ import {
             bg="#ebeeed"
             paddingBottom={{ base: "0px", md: "100px" }}
           >
+            <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin">Atras</Link>
+            </Button>
             <Text mb="10" fontSize={"5xl"}>
               EDITAR CARTA
             </Text>
+          </Stack>
             <Flex justifyContent={"center"} flexDir={"column"} >
             <Box mb="10">
               <Button fontSize={{ base: "2xl",md: '3xl'}} bg="#8af0be">

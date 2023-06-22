@@ -9,6 +9,7 @@ import {
   Select,
   Center,
   Divider,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
@@ -16,6 +17,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import Link from "next/link";
 
 const AdminFocaccias = ({ focaccias }) => {
   const [focaccia, setFocaccia] = useState({
@@ -103,9 +105,21 @@ const AdminFocaccias = ({ focaccias }) => {
           bg="#ebeeed"
           paddingBottom={{ base: "0px", md: "100px" }}
         >
-          <Text mb="10" fontSize={"5xl"}>
-            EDITAR FOCACCIA
-          </Text>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin/carta">Atras</Link>
+            </Button>
+            <Text mb="10" fontSize={"5xl"}>
+              EDITAR FOCACCIAS
+            </Text>
+          </Stack>
 
           <Text>NUEVA FOCACCIA</Text>
           <Text fontSize={"3xl"} align="center">

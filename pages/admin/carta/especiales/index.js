@@ -9,6 +9,7 @@ import {
     Select,
     Center,
     Divider,
+    Stack,
   } from "@chakra-ui/react";
   import React from "react";
   import { useRouter } from "next/router";
@@ -16,6 +17,7 @@ import {
   import { useState } from "react";
   import Swal from "sweetalert2";
   import axios from "axios";
+import Link from "next/link";
   
   const AdminEspeciales = ({ especiales }) => {
     const [especial, setEspecial] = useState({
@@ -103,10 +105,21 @@ import {
             bg="#ebeeed"
             paddingBottom={{ base: "0px", md: "100px" }}
           >
+            <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin/carta">Atras</Link>
+            </Button>
             <Text mb="10" fontSize={"5xl"}>
-              EDITAR BOCADILLO ESPECIAL
+              EDITAR BOCADILLOS ESPECIALES
             </Text>
-  
+          </Stack>
             <Text>NUEVO BOCADILLO ESPECIAL</Text>
             <Text fontSize={"3xl"} align="center">
               Nombre

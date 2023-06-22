@@ -7,6 +7,7 @@ import {
   Input,
   FormLabel,
   Select,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
@@ -14,6 +15,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import Swal from 'sweetalert2'
 import axios from "axios";
+import Link from "next/link";
 
 const AdminHorarios = () => {
   const [day, setDay] = useState({ dia: "", turnoMañana: "", turnoTarde: "" });
@@ -68,9 +70,21 @@ const AdminHorarios = () => {
           bg="#ebeeed"
           paddingBottom={{ base: "0px", md: "100px" }}
         >
-          <Text mb="10" fontSize={"5xl"}>
-            EDITAR HORARIOS
-          </Text>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin">Atras</Link>
+            </Button>
+            <Text mb="10" fontSize={"5xl"}>
+              EDITAR HORARIOS
+            </Text>
+          </Stack>
           <Box>
             <Text>CAMBIAR HORARIOS</Text>
             <Flex mb="10" justifyContent="center">

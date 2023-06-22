@@ -9,6 +9,7 @@ import {
   Select,
   Center,
   Divider,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import Promociones from "../../../../Components/Admin/Promociones/Promociones";
@@ -17,6 +18,7 @@ import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import Link from "next/link";
 
 
 const AdminPromociones = ({ tostadas, bocadillos }) => {
@@ -70,9 +72,21 @@ const AdminPromociones = ({ tostadas, bocadillos }) => {
           bg="#ebeeed"
           paddingBottom={{ base: "0px", md: "100px" }}
         >
-          <Text mb="10" fontSize={"5xl"}>
-            EDITAR PROMOCIONES
-          </Text>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin/carta">Atras</Link>
+            </Button>
+            <Text mb="10" fontSize={"5xl"}>
+              EDITAR PROMOCIONES
+            </Text>
+          </Stack>
           <Flex flexDir={{base:"column", md: "row"}}>
             <Promociones productos={tostadas} />
 

@@ -10,6 +10,7 @@ import {
   FormControl,
   Input,
   FormLabel,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
@@ -18,18 +19,16 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
-const AdminCarousel = ({imagenes}) => {
+const AdminCarousel = ({ imagenes }) => {
   const [image, setImage] = useState({
-    idCarousel:"",
+    idCarousel: "",
     nombre: "",
     ruta: null,
   });
   const router = useRouter();
   const { data: session, status } = useSession();
-
-
-  
 
   if (status === "loading") {
     return <div>Cargando...</div>;
@@ -39,11 +38,10 @@ const AdminCarousel = ({imagenes}) => {
     setImage({ ...image, [name]: value });
   };
 
-  
   const handleNuevaImagen = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    
+
     const res = await axios.post("/api/carousel", formData);
     Swal.fire({
       titleText: "Nueva Imagen!",
@@ -53,12 +51,11 @@ const AdminCarousel = ({imagenes}) => {
     });
   };
 
-
   const handleEliminarImagen = async (e) => {
     e.preventDefault();
 
-    const res =  axios.delete(`/api/carousel?idCarousel=${image.idCarousel}`);
-  
+    const res = axios.delete(`/api/carousel?idCarousel=${image.idCarousel}`);
+
     Swal.fire({
       titleText: "Imagen Eliminada!",
       icon: "success",
@@ -88,9 +85,22 @@ const AdminCarousel = ({imagenes}) => {
           bg="#ebeeed"
           paddingBottom={{ base: "0px", md: "100px" }}
         >
-          <Text mb="10" fontSize={"5xl"}>
-            EDITAR CARRUSEL
-          </Text>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: "", md: "27%" }}
+          >
+            <Button
+              bg="#e8bcce"
+              w={{ base: "fit-content" }}
+              fontSize={{ base: "xl" }}
+            >
+              <Link href="/admin">Atras</Link>
+            </Button>
+            <Text mb="10" fontSize={"5xl"}>
+              EDITAR CARRUSEL
+            </Text>
+          </Stack>
+
           <Box>
             <Text mb="5">AGREGAR UNA IMAGEN</Text>
 
@@ -111,7 +121,6 @@ const AdminCarousel = ({imagenes}) => {
                   type="file"
                   name="image"
                   width={{ base: "100%", md: "50%" }}
-                  
                 />
                 <Box>
                   <Button
@@ -146,35 +155,35 @@ const AdminCarousel = ({imagenes}) => {
                   </Text>
                 </FormLabel>
                 <Select
-                 mb="10"
+                  mb="10"
                   width={"60"}
                   placeholder={"Seleccionar imagen"}
                   onChange={handleChange}
-                  fontSize={{base:"2xl",md:"4xl"}}
+                  fontSize={{ base: "2xl", md: "2xl" }}
                   name="idCarousel"
                   borderColor="#057f54"
                 >
                   {imagenes.map((img) => (
                     <option key={img.idCarousel} value={img.idCarousel}>
-                      {img.nombre} 
+                      {img.nombre}
                     </option>
                   ))}
                 </Select>
               </FormControl>
             </form>
             <Box>
-                  <Button
-                    type="submit"
-                    padding={"5"}
-                    height={"20"}
-                    fontSize={{base:"2xl",md:"4xl"}}
-                    bg="#8af0be"
-                    onClick={handleEliminarImagen}
-                    mb={{ base: "65"}}
-                  >
-                    ELIMINAR IMAGEN
-                  </Button>
-                </Box>
+              <Button
+                type="submit"
+                padding={"5"}
+                height={"20"}
+                fontSize={{ base: "2xl", md: "4xl" }}
+                bg="#8af0be"
+                onClick={handleEliminarImagen}
+                mb={{ base: "65" }}
+              >
+                ELIMINAR IMAGEN
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -188,7 +197,7 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      imagenes
+      imagenes,
     },
   };
 };
