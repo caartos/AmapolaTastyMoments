@@ -1,0 +1,47 @@
+{
+  "name": "my-next-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.7.0",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^8.4.0",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "formidable": "^2.1.1",
+    "framer-motion": "^10.12.16",
+    "fs": "^0.0.1-security",
+    "knex": "^2.4.2",
+    
+    "mysql2": "^3.3.5",
+    "next": "^13.4.4",
+    "next-auth": "^4.22.1",
+    "next-iron-session": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
+    "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "serverless-mysql": "^1.5.5",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.7.12",
+    "swiper": "^9.3.2",
+    "swr": "^2.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.34",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11"
+  }
+}
