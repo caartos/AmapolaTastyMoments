@@ -12,13 +12,14 @@ export default withSession(async (req, res) => {
   const method = req.method.toLowerCase();
   const { username, password } = req.body;
 
+  
+
   if (method !== "post") {
     return res.status(405).end(`Method ${req.method} not allowed`);
   }
 
   try {
     const userCredentials = await dbService.getUser(username);
-  
     
     if ((await authService.validate(password, userCredentials.contraseña)) === true) {
       await saveSession({ username }, req);

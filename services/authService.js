@@ -4,8 +4,8 @@ import * as bcrypt from "bcryptjs"
 const authServiceFactory =  () =>{  
     
     const validate = async (password, dbPassword) =>{
-      return true
-      //return await (bcrypt.compare(encPass, encDbPass))
+      
+      return await (bcrypt.compare(password, dbPassword))
     }
 
     return {validate}
