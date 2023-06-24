@@ -90,7 +90,7 @@ export const getServerSideProps = withSession(async function ({ req, res }) {
     res.setHeader("location", "/logIn");
     res.statusCode = 302;
     res.end();
-    return props({});
+    return ;
   }
   return {
     props: { user: req.session.get("user") },
