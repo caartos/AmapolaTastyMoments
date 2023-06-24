@@ -115,7 +115,7 @@ const LogIn = ({ usuarios }) => {
               fontSize={"2xl"}
               borderColor={"#057f54"}
               type="password"
-              value=""
+              value={password}
               onChange={passwordHandler}
               width={{ base: "80%", md: "30%" }}
               mb={"10"}
