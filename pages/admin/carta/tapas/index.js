@@ -314,7 +314,7 @@ const AdminTapas = ({ tapas }) => {
   );
 };
 export const getServerSideProps = async (context) => {
-  const { data: tapas } = await axios.get("http://localhost:3000/api/tapas");
+  const { data: tapas } = await axios.get("https://amapola-carampi-gmailcom.vercel.app/api/tapas");
   return {
     props: {
       tapas,

@@ -84,7 +84,7 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
                         fontSize={{ base: "2xl", md: "3xl" }}
                         align="center"
                       >
-                        {i+1}. {tostada.nombre}
+                        {i + 1}. {tostada.nombre}
                       </Text>
                       <Text fontSize={{ base: "4xl", md: "5xl" }}>
                         € {tostada.precio}
@@ -139,13 +139,13 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
                   ELEGÍ TU BOCADILLO
                 </Text>
                 <Box>
-                  {bocadillos.map((bocadillo,i) => (
+                  {bocadillos.map((bocadillo, i) => (
                     <Box key={i}>
                       <Text
                         fontSize={{ base: "2xl", md: "3xl" }}
                         align="center"
                       >
-                        {i+1}. {bocadillo.nombre}
+                        {i + 1}. {bocadillo.nombre}
                       </Text>
                       <Text fontSize={{ base: "4xl", md: "5xl" }}>
                         € {bocadillo.precio}
@@ -184,7 +184,7 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
             >
               TAPAS
             </Text>
-            {tapas.map((tapa,i) => (
+            {tapas.map((tapa, i) => (
               <Box key={i}>
                 <Text
                   fontSize={{ base: "2xl", md: "3xl" }}
@@ -192,7 +192,7 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
                   align="center"
                   justifyContent="center"
                 >
-                  {i+1}. {tapa.nombre} {tapa.descripcion}
+                  {i + 1}. {tapa.nombre} {tapa.descripcion}
                 </Text>
                 <Text fontSize={{ base: "4xl", md: "5xl" }}>
                   € {tapa.precio}
@@ -221,20 +221,15 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
             >
               FOCACCIAS RELLENAS
             </Text>
-            {focaccias.map((focaccia,i) => (
-              <Box
-                key={i}
-                align="center"
-                width={["100%", "60%"]}
-              >
+            {focaccias.map((focaccia, i) => (
+              <Box key={i} align="center" width={["100%", "60%"]}>
                 <Text
                   fontSize={{ base: "2xl", md: "3xl" }}
                   mb={{ base: "3", md: "5" }}
                   align="center"
                   justifyContent="center"
                 >
-                  {i+1}. {focaccia.nombre}{" "}
-                  {focaccia.descripcion}
+                  {i + 1}. {focaccia.nombre} {focaccia.descripcion}
                 </Text>
                 <Text fontSize={{ base: "4xl", md: "5xl" }}>
                   € {focaccia.precio}
@@ -267,19 +262,15 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
             >
               BOCADILLOS ESPECIALES
             </Text>
-            {especiales.map((especial,i) => (
-              <Box
-                key={i}
-                align="center"
-                width={["100%", "60%"]}
-              >
+            {especiales.map((especial, i) => (
+              <Box key={i} align="center" width={["100%", "60%"]}>
                 <Text
                   fontSize={{ base: "2xl", md: "3xl" }}
                   mb={{ base: "3", md: "5" }}
                   align="center"
                   justifyContent="center"
                 >
-                  {i+1}. {especial.nombre}
+                  {i + 1}. {especial.nombre}
                 </Text>
                 <Text fontSize={{ base: "4xl", md: "5xl" }}>
                   € {especial.precio}
@@ -301,17 +292,19 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
 
 export const getServerSideProps = async (context) => {
   const { data: tostadas } = await axios.get(
-    "http://localhost:3000/api/tostadas"
+    "https://amapola-carampi-gmailcom.vercel.app/api/tostadas"
   );
   const { data: bocadillos } = await axios.get(
-    "http://localhost:3000/api/bocadillos"
+    "https://amapola-carampi-gmailcom.vercel.app/api/bocadillos"
   );
-  const { data: tapas } = await axios.get("http://localhost:3000/api/tapas");
+  const { data: tapas } = await axios.get(
+    "https://amapola-carampi-gmailcom.vercel.app/api/tapas"
+  );
   const { data: focaccias } = await axios.get(
-    "http://localhost:3000/api/focaccias"
+    "https://amapola-carampi-gmailcom.vercel.app/api/focaccias"
   );
   const { data: especiales } = await axios.get(
-    "http://localhost:3000/api/bocadillosespeciales"
+    "https://amapola-carampi-gmailcom.vercel.app/api/bocadillosespeciales"
   );
   return {
     props: {

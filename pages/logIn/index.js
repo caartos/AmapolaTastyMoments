@@ -173,7 +173,7 @@ const LogIn = ({ usuarios }) => {
 
 export const getServerSideProps = async (context) => {
   const { data: usuarios } = await axios.get(
-    "http://localhost:3000/api/user/getUsers"
+    "https://amapola-carampi-gmailcom.vercel.app/api/user/getUsers"
   );
   return {
     props: {

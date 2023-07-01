@@ -18,7 +18,7 @@ const getTiposDeProducto = async(req, res) => {
     return res.status(200).json(todasLosTiposDeProducto);
 }
 const postTipoDeProducto = async(req, res) => {
-    const result = await query("INSERT INTO amapola.Carta SET ?",{
+    const result = await query("INSERT INTO Carta SET ?",{
       tipoDeProducto: "pepe",
     });
 

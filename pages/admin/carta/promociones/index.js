@@ -121,10 +121,10 @@ const AdminPromociones = ({ tostadas, bocadillos }) => {
 };
 export const getServerSideProps = async (context) => {
   const { data: tostadas } = await axios.get(
-    "http://localhost:3000/api/tostadas"
+    "https://amapola-carampi-gmailcom.vercel.app/api/tostadas"
   );
   const { data: bocadillos } = await axios.get(
-    "http://localhost:3000/api/bocadillos"
+    "https://amapola-carampi-gmailcom.vercel.app/api/bocadillos"
   );
   return {
     props: {

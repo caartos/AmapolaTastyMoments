@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
 const getBocadillos = async(req, res) => {
   const result = await query("SELECT * FROM Bocadillos",{});
-
+    
     return res.status(200).json(result);
 }
 

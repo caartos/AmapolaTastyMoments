@@ -15,8 +15,8 @@ const HomePage = ({imagenes, horarios}) => {
 
 export const getServerSideProps = async (context) => {
   
-  const {data : imagenes}= await axios.get("http://localhost:3000/api/carousel");
-  const {data : horarios}= await axios.get("http://localhost:3000/api/horarios");
+  const {data : horarios}= await axios.get(`https://amapola-carampi-gmailcom.vercel.app/api/horarios`);
+  const {data : imagenes}= await axios.get(`https://amapola-carampi-gmailcom.vercel.app/api/carousel`);
   return {
     props : {
       imagenes,

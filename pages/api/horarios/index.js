@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 }}
 
 const getHorarios = async(req, res) => {
-  const todasLasImagenes = await query("SELECT * FROM amapola.Horarios",{});
+  const todasLasImagenes = await query("SELECT * FROM Horarios",{});
 
     return res.status(200).json(todasLasImagenes);
 }

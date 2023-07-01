@@ -40,6 +40,7 @@ const AdminCarousel = ({ imagenes }) => {
 
   const handleNuevaImagen = async (e) => {
     e.preventDefault();
+    console.log(e.target)
     const formData = new FormData(e.target);
 
     const res = await axios.post("/api/carousel", formData);
@@ -54,7 +55,7 @@ const AdminCarousel = ({ imagenes }) => {
   const handleEliminarImagen = async (e) => {
     e.preventDefault();
 
-    const res = axios.delete(`/api/carousel?idCarousel=${image.idCarousel}`);
+    const res = await axios.delete(`/api/carousel?idCarousel=${image.idCarousel}`);
 
     Swal.fire({
       titleText: "Imagen Eliminada!",
@@ -129,6 +130,7 @@ const AdminCarousel = ({ imagenes }) => {
                     height={"20"}
                     fontSize={"3xl"}
                     bg="#8af0be"
+                    
                   >
                     NUEVA IMAGEN
                   </Button>
@@ -147,7 +149,7 @@ const AdminCarousel = ({ imagenes }) => {
           </Center>
           <Text>ELIMINAR IMAGEN</Text>
           <Box mb="10" justifyContent="center">
-            <form method="PUT" encType="multipart/form-data" name="image">
+            <form method="DELETE" encType="multipart/form-data" name="image">
               <FormControl>
                 <FormLabel>
                   <Text fontSize={"3xl"} align="center">
@@ -192,7 +194,7 @@ const AdminCarousel = ({ imagenes }) => {
 };
 export const getServerSideProps = async (context) => {
   const { data: imagenes } = await axios.get(
-    "http://localhost:3000/api/carousel"
+    "https://amapola-carampi-gmailcom.vercel.app/api/carousel"
   );
 
   return {

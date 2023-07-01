@@ -14,14 +14,14 @@ export default async function handler(req, res) {
 }
 
 const getTostadas = async (req, res) => {
-  const todasLasTostadas = await query("SELECT * FROM amapola.Tostadas", {});
+  const todasLasTostadas = await query("SELECT * FROM Tostadas", {});
 
   return res.status(200).json(todasLasTostadas);
 };
 
 const postTostada = async (req, res) => {
   const { nombre, precio } = req.body;
-  const result = await query("INSERT INTO amapola.Tostadas SET ?", {
+  const result = await query("INSERT INTO Tostadas SET ?", {
     nombre: req.body.nombre,
     precio: req.body.precio
   });

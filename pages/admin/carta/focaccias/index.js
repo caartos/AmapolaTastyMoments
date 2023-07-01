@@ -319,7 +319,7 @@ const AdminFocaccias = ({ focaccias }) => {
 };
 export const getServerSideProps = async (context) => {
   const { data: focaccias } = await axios.get(
-    "http://localhost:3000/api/focaccias"
+    "https://amapola-carampi-gmailcom.vercel.app/api/focaccias"
   );
   return {
     props: {

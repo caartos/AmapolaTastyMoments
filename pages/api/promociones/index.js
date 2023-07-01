@@ -12,13 +12,13 @@ export default async function handler(req, res) {
 }}
 
 const getPromociones = async(req, res) => {
-  const todasLasImagenes = await query("SELECT * FROM amapola.Promociones",{});
+  const todasLasImagenes = await query("SELECT * FROM Promociones",{});
 
     return res.status(200).json(todasLasImagenes);
 }
 
 const postPromo = async(req, res) => {
-    const result = await query("INSERT INTO amapola.Promociones SET ?",{
+    const result = await query("INSERT INTO Promociones SET ?",{
       nombre: "pepe",
     })
     return res.status(200).json({ result });

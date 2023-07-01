@@ -318,7 +318,7 @@ import Link from "next/link";
   };
   export const getServerSideProps = async (context) => {
     const { data: especiales } = await axios.get(
-      "http://localhost:3000/api/bocadillosespeciales"
+      "https://amapola-carampi-gmailcom.vercel.app/api/bocadillosespeciales"
     );
     return {
       props: {

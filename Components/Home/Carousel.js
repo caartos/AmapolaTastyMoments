@@ -5,17 +5,7 @@ import Slider from 'react-slick';
 
 
 // Settings for the slider
-const settings = {
-  dots: true,
-  arrows: false,
-  fade: false,
-  infinite: true,
-  autoplay: true,
-  speed: 500,
-  autoplaySpeed: 5000,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
+
 
 const Carousel = ({imagenes}) => {
  
@@ -23,6 +13,18 @@ const Carousel = ({imagenes}) => {
 
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '10px' });
+
+  const settings = {
+    dots: useBreakpointValue({ base: false, md: true }),
+    arrows: false,
+    fade: false,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <Center height="2xl">
@@ -82,7 +84,7 @@ const Carousel = ({imagenes}) => {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="contain"
-            backgroundImage={`url(${imagen.ruta.substring(59)})`}
+            backgroundImage={imagen.ruta}
           />
         ))}
       </Slider>
