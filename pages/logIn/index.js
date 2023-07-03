@@ -16,7 +16,6 @@ import axios from "axios";
 const userService = userServiceFactory();
 
 const LogIn = ({ usuarios }) => {
-  console.log(usuarios.length)
   const { user, mutateUser } = useUser({
     redirectTo: "/admin",
     redirectIfFound: true,

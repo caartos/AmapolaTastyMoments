@@ -40,7 +40,6 @@ const AdminCarousel = ({ imagenes }) => {
 
   const handleNuevaImagen = async (e) => {
     e.preventDefault();
-    console.log(e.target)
     const formData = new FormData(e.target);
 
     const res = await axios.post("/api/carousel", formData);
@@ -54,7 +53,6 @@ const AdminCarousel = ({ imagenes }) => {
 
   const handleEliminarImagen = async (e) => {
     e.preventDefault();
-
     const res = await axios.delete(`/api/carousel?idCarousel=${image.idCarousel}`);
 
     Swal.fire({

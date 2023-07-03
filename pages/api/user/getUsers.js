@@ -26,7 +26,6 @@ const postUser = async (req, res) => {
       res.status(500).json({ message: 'Error al encriptar la contraseña' });
       return;
     }
-    console.log("hash", hashedPassword)
     const result = query("INSERT INTO User SET ?", {
     nombre: nombre,
     contraseña: hashedPassword,
