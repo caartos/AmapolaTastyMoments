@@ -267,7 +267,7 @@ const AdminTapas = ({ tapas }) => {
               borderColor="#057f54"
             />
           </Center>
-          <Text>ELIMINAR TOSTADA</Text>
+          <Text>ELIMINAR TAPA</Text>
           <Box mb="10" justifyContent="center">
             <form method="PUT" encType="multipart/form-data" name="image">
               <FormControl>
