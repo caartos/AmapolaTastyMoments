@@ -56,7 +56,7 @@ const postImages = async (req, res) => {
      const file = files.image;
      const filePath = file.filepath;
      const fileName = file.originalFilename;
-
+     
   //   try {
   //     // Subir la imagen a AWS S3
        const uploadParams = {

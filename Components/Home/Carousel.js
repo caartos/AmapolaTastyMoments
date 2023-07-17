@@ -80,6 +80,7 @@ const Carousel = ({imagenes}) => {
           <Box
             key={imagen.idCarousel}
             height="xl"
+            width={{ base: '100%'}}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
