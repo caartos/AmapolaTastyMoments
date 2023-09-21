@@ -1,7 +1,8 @@
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
-import { Box, Center, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import { Divider } from "@chakra-ui/react";
 import axios from "axios";
+import Title from "../../Components/Text/Title";
 
 const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
   return (
@@ -26,14 +27,7 @@ const Menu = ({ tostadas, bocadillos, tapas, focaccias, especiales }) => {
           bg="#ebeeed"
           paddingBottom={{ base: "0px", md: "100px" }}
         >
-          <Text
-            align="center"
-            fontWeight="bold"
-            fontSize={{ md: "6xl" }}
-            mb="20"
-          >
-            Nuestra Carta
-          </Text>
+          <Title title={"Nuestra Carta"} />
           {/* Sección 1 */}
 
           <Text

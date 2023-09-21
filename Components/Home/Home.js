@@ -1,13 +1,12 @@
-import { Box, Center, Flex, Image, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Descripcion from "./Descripcion";
 import Carousel from "./Carousel";
 import Reservas from "./Reservas";
 import Contacto from "./Contacto";
-import { Divider } from "@chakra-ui/react";
+import DividerSections from "../Divider/DividerSections";
+import Title from "../Text/Title";
 
-
-const Home = ({imagenes, horarios}) => {
-  
+const Home = ({ imagenes, horarios }) => {
   return (
     <Box
       bgImg="images/porton.png"
@@ -27,58 +26,16 @@ const Home = ({imagenes, horarios}) => {
         bg="#ebeeed"
         paddingBottom={{ base: "0px", md: "100px" }}
       >
-        <Text mt={{base:"auto", md:"5"}} align="center" fontWeight="bold" fontSize={{ md: "5xl" }}>
-          Amapola Tasty Moments
-        </Text>
+        <Title title={"Amapola Tasty Moments"} />
         {/* Sección 1 */}
-        <Descripcion/>
-        
-        <Center>
-          <Divider
-            width="600px"
-            marginTop={85}
-            marginBottom={85}
-            border="1px"
-            borderColor="#057f54"
-            mt={{ base: "65", md: "85" }}
-            mb={{ base: "65", md: "85" }}
-          />
-        </Center>
-
+        <Descripcion />
+        <DividerSections />
         {/* Sección 2 */}
-
-        <Text
-          align="center"
-          fontSize="4xl"
-          textdecor="underline"
-          marginBottom={{ base: "-28", md: "14" }}
-          id="gallery"
-        >
-          GALERIA
-        </Text>
-        <Carousel imagenes={imagenes}/>
-
-        <Center>
-          <Divider
-            width="600px"
-            mt={{ base: "0", md: "85" }}
-            mb={{ base: "65", md: "85" }}
-            border="1px"
-            borderColor="#057f54"
-          />
-        </Center>
-
+        <Carousel imagenes={imagenes} />
+        <DividerSections />
         {/* Sección 3 */}
-        <Reservas horarios={horarios}/>
-        <Center>
-          <Divider
-            width="600px"
-            mt={{ base: "65", md: "85" }}
-            mb={{ base: "65", md: "85" }}
-            border="1px"
-            borderColor="#057f54"
-          />
-        </Center>
+        <Reservas horarios={horarios} />
+        <DividerSections />
         {/* Sección 4 */}
         <Contacto />
       </Box>
